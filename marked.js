@@ -104,7 +104,7 @@ fs.readFile('./source/index.md', 'utf8', function (err, content) {
       var includeFileName = data.includes[i],
         includeFilePath = path.resolve(__dirname, 'source/includes', includeFileName + '.md'),
         includeContent = fs.readFileSync(includeFilePath, {encoding: 'utf8'}),
-        markedInclude = marked(includeContent),
+        markedInclude = marked(includeContent);
         Handlebars.registerPartial(includeFileName, markedInclude);
     }
   }
